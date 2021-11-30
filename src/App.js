@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  Link,
-  Routes,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import StudentData from "./components/data/StudentData";
 import TableView from "./components/TableView";
 import ChartAvg from "./components/ChartAvg";
@@ -90,8 +86,9 @@ class App extends React.Component {
 
 
     return (
-      <div>
-        <nav>
+      <Router>
+        <div>
+          <nav>
             <ul className="nav-ul">
               <li>
                 <Link to="/">Home</Link>
@@ -105,13 +102,22 @@ class App extends React.Component {
       
             </ul>
           </nav>
-          </div>>
-            <Routes>
-              <Route path="/" element={<TableView getAllNames={this.getAllNames} />}/>
-              <Route path="/studentview" element = { <StudentView getAllNames={this.getAllNames} />}/>
-              <Route path="/studentview/:name" render={(props) => <StudentDetails getNames={this.getNames}  {...props}/>}/>
+          <main>
+            <Switch>
+              <Route path="/tableview">
+                <TableView getAllNames={this.getAllNames} />
+              </Route>
 
-              <Route path="/details"/>
+              <Route path="/studentview" exact>
+                <StudentView getAllNames={this.getAllNames} />
+              </Route>
+              
+              
+              <Route path="/studentview/:name" render={(props) => <StudentDetails getNames={this.getNames}  {...props}/>}/>
+             
+
+
+              <Route path="/details">
               <div className="button-container">
                 <Link to="/"><button>Overview</button></Link>
                 </div>
@@ -121,8 +127,8 @@ class App extends React.Component {
                   getAverage={this.getAverage}
                   getNames={this.getNames}
                 />
-              
-              <Route path="/" element = {<TableView/>}/>
+              </Route>
+              <Route path="/">
               <div className="button-container">
         
               <Link to="/Details"><button>Detailed view</button></Link>
@@ -132,13 +138,15 @@ class App extends React.Component {
                   getAverage={this.getAverage}
                   getNames={this.getNames}
                 />
+              </Route>
               
-              
-            
-         
-      </Routes>
+            </Switch>
+          </main>
+        </div>
+      </Router>
     );
   }
 }
 
 export default App;
+
