@@ -50,7 +50,7 @@ thead {
 }
 
 tr:nth-child(even) {
-  background-color: #f1f3fa3d;
+  background-color: #939ec63d;
 }
 tr:hover {
   background: #f1f3fa;
