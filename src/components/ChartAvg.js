@@ -11,6 +11,7 @@ import {
 
 import wincTheme from "./data/WincTheme";
 
+
 const ChartAvg = (props) => {
   
   let dataForChart = props.getNames();
@@ -28,7 +29,7 @@ const ChartAvg = (props) => {
       <figure>
         <h3>Dashboard overview all Students</h3>
         <>
-          {/* Eerste staaf diagram rood */}
+          
           <div className="barchart">
             <h3 className="inside-div-h3">Difficult and Enjoyment rate all assignments</h3>
           <VictoryChart

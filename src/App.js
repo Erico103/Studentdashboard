@@ -6,7 +6,7 @@ import ChartAvg from "./components/ChartAvg";
 import Details from './components/Details'
 import StudentView from './components/StudentView'
 import StudentDetails from './components/StudentDetails'
-
+import "./App.css"
 
 class App extends React.Component {
  
