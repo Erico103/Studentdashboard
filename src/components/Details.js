@@ -45,7 +45,7 @@ const Details = (props) => {
                   }}
                   x="assignment"
                   y="difficultyRating"
-                  alignment="start"
+                  alignment="middle"
                   color="#8791f6"
                   tickValues={[1, 2, 3, 4, 5]}
                 />
@@ -120,7 +120,7 @@ const Details = (props) => {
                 }}
                 x="assignment"
                 y="difficultyRating"
-                alignment="start"
+                alignment="middle"
               />
               <VictoryAxis
                 // tickValues specifies both the number of ticks and where

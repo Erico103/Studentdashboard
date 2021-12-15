@@ -33,10 +33,10 @@ const ChartAvg = (props) => {
       <div className='green'>funfactor</div>
     <VictoryChart
       padding={{ top: 40, bottom: 100, left: 60, right: 60 }}
-      domainPadding={15}
+      domainPadding={20}
       theme={wincTheme}    >
 
-      <VictoryGroup offset={20}>
+      <VictoryGroup offset={17}>
         <VictoryStack>
         <VictoryBar
           labelComponent={<VictoryTooltip />}
@@ -63,7 +63,7 @@ const ChartAvg = (props) => {
           }}
           
           y="enjoymentRating"
-          alignment="start"
+          alignment="middle"
           color='#8791f6'
 
           tickValues={[1, 2, 3, 4, 5]}
