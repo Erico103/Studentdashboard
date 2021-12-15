@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-import StudentDetails from "./StudentDetails";
+
 
 
 function StudentView(props) {

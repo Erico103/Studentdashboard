@@ -130,7 +130,7 @@ let name = match.params.name
             tickValues={[1, 2, 3, 4, 5]}
             tickFormat={dataForChart.map((avg) => avg.assignment)}
             tickLabelComponent={
-              <VictoryLabel angle={60} textAnchor="start" />
+              <VictoryLabel angle={50} textAnchor="start" />
             }
           />
           <VictoryAxis dependentAxis />
