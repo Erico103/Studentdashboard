@@ -28,9 +28,11 @@ const ChartAvg = (props) => {
     <>
     {/* Eerste staaf diagram rood */}
     <div className="barchart">
-      <h3 className="inside-div-h3">Difficult and Enjoyment rate all assignments</h3>
+      <h3 className="inside-div-h3">Average Difficult and Enjoyment rate all assignments</h3>
+      <div className='header-title'>
       <div className='red'>difficulty</div>
       <div className='green'>funfactor</div>
+      </div>
     <VictoryChart
       padding={{ top: 40, bottom: 100, left: 60, right: 60 }}
       domainPadding={20}
@@ -86,12 +88,14 @@ const ChartAvg = (props) => {
 
     </VictoryChart>
     </div>
-    {/* Begin lijn  */}
+   
     <div className="linechart">
 
         <h3 className="inside-div-h3">Average line chart all assignments</h3>
-        <div className='red'>difficulty</div>
+        <div className='header-title'>
+      <div className='red'>difficulty</div>
       <div className='green'>funfactor</div>
+      </div>
     <VictoryChart
       padding={{ top: 40, bottom: 100, left: 60, right: 60 }}
       domainPadding={15}

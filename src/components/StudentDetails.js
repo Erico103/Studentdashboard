@@ -10,7 +10,6 @@ import {
   VictoryLabel,
   VictoryStack,
 } from "victory";
-// import StudentData from "./StudentData";
 import wincTheme from "./data/WincTheme";
 
 const StudentDetails = ({ match }) => {
@@ -30,11 +29,14 @@ const StudentDetails = ({ match }) => {
       <figure>
         <h3>Dashboard overview {name}</h3>
         <>
-          {/* Eerste staaf diagram rood */}
           <div className="barchart">
             <h3 className="inside-div-h3">
               Difficult and Enjoyment rate all assignments for {name}
             </h3>
+            <div className="header-title">
+              <div className="red">difficulty</div>
+              <div className="green">funfactor</div>
+            </div>
 
             <VictoryChart
               padding={{ top: 40, bottom: 100, left: 60, right: 60 }}
@@ -53,12 +55,12 @@ const StudentDetails = ({ match }) => {
                     x="assignment"
                     y="difficultyRating"
                     alignment="start"
-                    color="#8791f6"
+                    color="red"
                     tickValues={[1, 2, 3, 4, 5]}
                   />
                 </VictoryStack>
                 <VictoryStack>
-                  {/* Eerste staaf diagram geel */}
+                  
                   <VictoryBar
                     labelComponent={<VictoryTooltip />}
                     data={dataForChart}
@@ -68,15 +70,13 @@ const StudentDetails = ({ match }) => {
                     }}
                     x="assignment"
                     y="enjoymentRating"
-                    color="#38d7a7"
+                    color="#8791f6"
                     alignment="middle"
                     tickValues={[1, 2, 3, 4, 5]}
                   />
                 </VictoryStack>
               </VictoryGroup>
               <VictoryAxis
-                // tickValues specifies both the number of ticks and where
-                // they are placed on the axis
                 tickValues={[1, 2, 3, 4, 5]}
                 tickFormat={dataForChart.map(avg => avg.assignment)}
                 tickLabelComponent={
@@ -86,11 +86,15 @@ const StudentDetails = ({ match }) => {
               <VictoryAxis dependentAxis />
             </VictoryChart>
           </div>
-          {/* Begin lijn  */}
+
           <div className="linechart">
             <h3 className="inside-div-h3">
               Average line chart all assignments for {name}
             </h3>
+            <div className="header-title">
+              <div className="red">difficulty</div>
+              <div className="green">funfactor</div>
+            </div>
             <VictoryChart
               padding={{ top: 40, bottom: 100, left: 60, right: 60 }}
               domainPadding={15}
@@ -98,7 +102,7 @@ const StudentDetails = ({ match }) => {
             >
               <VictoryLine
                 style={{
-                  data: { stroke: "#c43a31" },
+                  data: { stroke: "red" },
                   parent: { border: "1px solid #ccc" },
                 }}
                 labelComponent={<VictoryTooltip />}
@@ -110,10 +114,11 @@ const StudentDetails = ({ match }) => {
                 x="assignment"
                 y="difficultyRating"
                 alignment="start"
+                interpolation='cardinal'
               />
               <VictoryLine
                 style={{
-                  data: { stroke: "#ff00ff" },
+                  data: { stroke: "#8791f6" },
                   parent: { border: "1px solid #ccc" },
                 }}
                 labelComponent={<VictoryTooltip />}
@@ -125,10 +130,10 @@ const StudentDetails = ({ match }) => {
                 x="assignment"
                 y="enjoymentRating"
                 alignment="start"
+                interpolation='cardinal'
               />
               <VictoryAxis
-                // tickValues specifies both the number of ticks and where
-                // they are placed on the axis
+                
                 tickValues={[1, 2, 3, 4, 5]}
                 tickFormat={dataForChart.map(avg => avg.assignment)}
                 tickLabelComponent={
