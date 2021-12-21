@@ -9,6 +9,7 @@ import {
   VictoryGroup,
   VictoryLabel,
   VictoryStack,
+  VictoryLegend
 } from "victory";
 import wincTheme from "./data/WincTheme";
 
@@ -33,16 +34,23 @@ const StudentDetails = ({ match }) => {
             <h3 className="inside-div-h3">
               Difficult and Enjoyment rate all assignments for {name}
             </h3>
-            <div className="header-title">
-              <div className="red">difficulty</div>
-              <div className="green">funfactor</div>
-            </div>
+            
 
             <VictoryChart
               padding={{ top: 40, bottom: 100, left: 60, right: 60 }}
               domainPadding={20}
               theme={wincTheme}
             >
+               <VictoryLegend
+            x={500}
+            y={0}
+            orientation="horizontal"
+            gutter={20}
+            data={[
+              { name: 'Difficulty', symbol: { fill: 'red' } },
+              { name: 'Enjoyment', symbol: { fill: '#8791f6' } },
+            ]}
+          />
               <VictoryGroup offset={5}>
                 <VictoryStack>
                   <VictoryBar
@@ -91,15 +99,22 @@ const StudentDetails = ({ match }) => {
             <h3 className="inside-div-h3">
               Average line chart all assignments for {name}
             </h3>
-            <div className="header-title">
-              <div className="red">difficulty</div>
-              <div className="green">funfactor</div>
-            </div>
+            
             <VictoryChart
               padding={{ top: 40, bottom: 100, left: 60, right: 60 }}
               domainPadding={15}
               theme={wincTheme}
             >
+               <VictoryLegend
+            x={500}
+            y={0}
+            orientation="horizontal"
+            gutter={20}
+            data={[
+              { name: 'Difficulty', symbol: { fill: 'red' } },
+              { name: 'Enjoyment', symbol: { fill: '#8791f6' } },
+            ]}
+          />
               <VictoryLine
                 style={{
                   data: { stroke: "red" },

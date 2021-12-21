@@ -8,6 +8,7 @@ import {
   VictoryGroup,
   VictoryLabel,
   VictoryStack,
+  VictoryLegend
 } from "victory";
 // import StudentData from "./StudentData";
 import wincTheme from "./data/WincTheme";
@@ -31,15 +32,22 @@ const ChartAvg = props => {
         <h3 className="inside-div-h3">
           Average Difficult and Enjoyment rate all assignments
         </h3>
-        <div className="header-title">
-          <div className="red">difficulty</div>
-          <div className="green">funfactor</div>
-        </div>
+        
         <VictoryChart
           padding={{ top: 40, bottom: 100, left: 60, right: 60 }}
           domainPadding={20}
           theme={wincTheme}
         >
+           <VictoryLegend
+            x={500}
+            y={0}
+            orientation="horizontal"
+            gutter={20}
+            data={[
+              { name: 'Difficulty', symbol: { fill: 'red' } },
+              { name: 'Enjoyment', symbol: { fill: '#8791f6' } },
+            ]}
+          />
           <VictoryGroup offset={17}>
             <VictoryStack>
               <VictoryBar
@@ -84,15 +92,22 @@ const ChartAvg = props => {
 
       <div className="linechart">
         <h3 className="inside-div-h3">Average line chart all assignments</h3>
-        <div className="header-title">
-          <div className="red">difficulty</div>
-          <div className="green">funfactor</div>
-        </div>
+       
         <VictoryChart
           padding={{ top: 40, bottom: 100, left: 60, right: 60 }}
-          domainPadding={15}
+          domainPadding={20}
           theme={wincTheme}
         >
+           <VictoryLegend
+            x={500}
+            y={0}
+            orientation="horizontal"
+            gutter={20}
+            data={[
+              { name: 'Difficulty', symbol: { fill: 'red' } },
+              { name: 'Enjoyment', symbol: { fill: '#8791f6' } },
+            ]}
+          />
           <VictoryLine
             style={{
               data: { stroke: "red" },
