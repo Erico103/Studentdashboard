@@ -11,10 +11,10 @@ import {
 // import StudentData from "./StudentData";
 import wincTheme from "./data/WincTheme";
 
-const Details = (props) => {
+const Details = props => {
   // Verkrijg hier de namen van de assignments
   let dataForChart = props.getNames();
-  dataForChart = dataForChart.map((avg) => ({
+  dataForChart = dataForChart.map(avg => ({
     assignment: avg.assignment,
     difficultyRating: avg.difficultyRating,
     enjoymentRating: avg.enjoymentRating,
@@ -54,7 +54,7 @@ const Details = (props) => {
                 // tickValues specifies both the number of ticks and where
                 // they are placed on the axis
                 tickValues={[1, 2, 3, 4, 5]}
-                tickFormat={dataForChart.map((avg) => avg.assignment)}
+                tickFormat={dataForChart.map(avg => avg.assignment)}
                 tickLabelComponent={
                   <VictoryLabel angle={60} textAnchor="start" />
                 }
@@ -89,7 +89,7 @@ const Details = (props) => {
                 // tickValues specifies both the number of ticks and where
                 // they are placed on the axis
                 tickValues={[1, 2, 3, 4, 5]}
-                tickFormat={dataForChart.map((avg) => avg.assignment)}
+                tickFormat={dataForChart.map(avg => avg.assignment)}
                 tickLabelComponent={
                   <VictoryLabel angle={60} textAnchor="start" />
                 }
@@ -114,6 +114,7 @@ const Details = (props) => {
                 }}
                 labelComponent={<VictoryTooltip />}
                 data={dataForChart}
+                interpolation="cardinal"
                 animate={{
                   duration: 4000,
                   onLoad: { duration: 4000 },
@@ -126,7 +127,7 @@ const Details = (props) => {
                 // tickValues specifies both the number of ticks and where
                 // they are placed on the axis
                 tickValues={[1, 2, 3, 4, 5]}
-                tickFormat={dataForChart.map((avg) => avg.assignment)}
+                tickFormat={dataForChart.map(avg => avg.assignment)}
                 tickLabelComponent={
                   <VictoryLabel angle={60} textAnchor="start" />
                 }
@@ -152,6 +153,7 @@ const Details = (props) => {
                 }}
                 labelComponent={<VictoryTooltip />}
                 data={dataForChart}
+                interpolation="cardinal"
                 animate={{
                   duration: 4000,
                   onLoad: { duration: 4000 },
@@ -164,7 +166,7 @@ const Details = (props) => {
                 // tickValues specifies both the number of ticks and where
                 // they are placed on the axis
                 tickValues={[1, 2, 3, 4, 5]}
-                tickFormat={dataForChart.map((avg) => avg.assignment)}
+                tickFormat={dataForChart.map(avg => avg.assignment)}
                 tickLabelComponent={
                   <VictoryLabel angle={60} textAnchor="start" />
                 }

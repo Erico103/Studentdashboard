@@ -22,19 +22,14 @@ export const FilteringTable = () => {
     footerGroups,
     rows,
     prepareRow,
-    state,
-    setGlobalFilter,
   } = useTable(
     {
       columns,
       data,
       defaultColumn,
     },
-    useFilters,
-    
+    useFilters
   );
-
-  const { globalFilter } = state;
 
   return (
     <>

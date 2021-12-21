@@ -1,4 +1,4 @@
-import {ColumnFilter} from './ColumnFilter'
+
 
 export const COLUMNS= [
   {

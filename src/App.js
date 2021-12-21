@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import StudentData from "./components/data/StudentData";
-import TableView from "./components/TableView";
 import {FilteringTable} from "./components/FilteringTable"
 import ChartAvg from "./components/ChartAvg";
 import Details from './components/Details'
