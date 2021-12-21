@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import StudentData from "./components/data/StudentData";
 import TableView from "./components/TableView";
+import {FilteringTable} from "./components/FilteringTable"
 import ChartAvg from "./components/ChartAvg";
 import Details from './components/Details'
 import StudentView from './components/StudentView'
@@ -11,7 +12,7 @@ import "./App.css"
 class App extends React.Component {
  
 
-  getAssignments = () => {
+   getAssignments = () => {
     const studentData = StudentData;
     let assignment = [];
     const map = new Map();
@@ -94,7 +95,7 @@ class App extends React.Component {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/tableview">Table view</Link>
+                <Link to="/FilteringTable">Table view</Link>
               </li>
               <li>
                 <Link to="/studentview">Student view</Link>
@@ -104,8 +105,8 @@ class App extends React.Component {
           </nav>
           <main>
             <Switch>
-              <Route path="/tableview">
-                <TableView getAllNames={this.getAllNames} />
+              <Route path="/FilteringTable">
+                <FilteringTable  />
               </Route>
 
               <Route path="/studentview" exact>
